@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, Comment } = require('../models');
+const { Post, Comment } = require('../../models');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
@@ -15,14 +15,20 @@ router.get('/', async (req, res) => {
       blog.get({ plain: true })
     );
 
-    res.render('homepage', {
+    // res.render('homepage', {
+        res.render('index', {
       posts,
     });
   } catch (err) {
-    console.log(err);
+    console.log(err & "here is the error");
     res.status(500).json(err);
   }
 });
+
+
+// router.get('/', function (req, res) {
+//     res.render('homepage', {});
+//   });
 
 
 
