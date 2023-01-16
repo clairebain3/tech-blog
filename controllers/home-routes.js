@@ -1,12 +1,13 @@
 const router = require('express').Router();
-const { Post, Comment } = require('../../models');
+const { Post, Comment } = require('../models');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
+        attributes: ['id'],
         
-          attributes: ['title', 'content', 'created_date', 'created_by'],
+        //   attributes: ['title', 'content', 'created_date', 'created_by'],
         },
       
     );
@@ -16,7 +17,7 @@ router.get('/', async (req, res) => {
     );
 
     // res.render('homepage', {
-        res.render('index', {
+        res.render('homepage', {
       posts,
     });
   } catch (err) {
@@ -24,6 +25,13 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// router.get('/', async (req, res) => {
+//   // Add a comment describing the purpose of the render method
+//   // This method is rendering the 'all' Handlebars.js template. This is how we connect each route to the correct template.
+//   res.render('homepage');
+// });
+
 
 
 // router.get('/', function (req, res) {
