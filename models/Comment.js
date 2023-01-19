@@ -11,27 +11,27 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // title: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     content: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    created_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    created_by: {
-    type: DataTypes.STRING,
-    allowNull: false,
+//     created_date: {
+//       type: DataTypes.DATE,
+//       allowNull: false,
+//     },
+//     created_by: {
+//     type: DataTypes.STRING,
+//     allowNull: false,
 
-},
-    post_id: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
+// },
+//     post_id: {
+//     type: DataTypes.DATE,
+//     allowNull: false,
+//   },
 
   },
 

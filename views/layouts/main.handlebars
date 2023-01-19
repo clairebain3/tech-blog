@@ -11,9 +11,11 @@
     <nav>
         <p>Home</p>
         <p>Dashboard</p>
-        <p>Login</p>
+        {{#if logged_in}}
         <p>Logout</p>
-
+        {{else}}
+        <p>Login</p>
+        {{/if}}
     </nav>
 
     <header>
@@ -22,10 +24,11 @@
       </h1>
     </header>
       <main>
-{{#each posts as |blog|}}
+{{!-- {{#each posts as |blog|}}
 {{> post-details}}
-{{/each}}
-<p>my name </p>
+{{/each}} --}}
+
+{{{body}}}
       </main>
 
   </body>

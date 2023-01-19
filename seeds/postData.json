@@ -1,17 +1,14 @@
 [
     {
       "title": "SQL JOIN",
-      "content": "I think that SQL JOINs are a useful tool to use. Let me know your thoughts in the comments.",
-      "created_date": "5/1/2022"
+      "content": "I think that SQL JOINs are a useful tool to use. Let me know your thoughts in the comments."
     },
     {
       "title": "HTML",
-      "content": "Tell me your favorite HTML tips, please!",
-      "created_date": "4/3/2019"
+      "content": "Tell me your favorite HTML tips, please!"
     },
     {
       "title": "Back end vs Front End",
-      "content": "Which do you prefer? I am curious to know what others think.",
-      "created_date": "10/3/2021"
+      "content": "Which do you prefer? I am curious to know what others think."
     }
   ]

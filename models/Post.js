@@ -19,15 +19,15 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    created_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    created_by: {
-    type: DataTypes.STRING,
-    allowNull: false,
+    // created_date: {
+    //   type: DataTypes.DATE,
+    //   allowNull: false,
+    // },
+//     created_by: {
+//     type: DataTypes.STRING,
+//     allowNull: false,
 
-},
+// },
 
   },
 
