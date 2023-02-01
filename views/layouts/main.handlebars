@@ -9,12 +9,12 @@
 
 <body>
     <nav>
-        <p>Home</p>
-        <p>Dashboard</p>
+        <a href="/homepage">Home</a>
+        <a href="/dashboard">Dashboard</a>
         {{#if logged_in}}
-        <p>Logout</p>
+        <a href="/logout">Logout</a>
         {{else}}
-        <p>Login</p>
+        <a href="/login">Login</a>
         {{/if}}
     </nav>
 
