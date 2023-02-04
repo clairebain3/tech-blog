@@ -5,7 +5,7 @@ const { Post, Comment, User } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
-      // attributes: ["title", "content", "created_date", "created_by", "id"],
+      include: [ {model: User }],
     });
 
     const posts = dbPostData.map((blog) => blog.get({ plain: true }));
@@ -45,22 +45,23 @@ router.get('/login', async (req, res) => {
 
 // get user's posts for dashboard
 router.get("/dashboard", async (req, res) => {
-  try {
-    const dbUserData = await User.findByPk(req.session.user_id,{
-      attributes: { exclude: ['password'] },
-      include: [ {model: Post }],
-    });
+  // try {
+  //   const dbUserData = await User.findByPk(req.session.user_id,{
+  //     // attributes: { exclude: ['password'] },
+  //     // include: [ {model: Post }],
+  //   });
 
-    const user = dbUserData.map((blog) => blog.get({ plain: true }));
+  //   const user = dbUserData.map((myuser) => blog.myuser({ plain: true }));
 
-    res.render("dashboard", {
-      ...user,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    console.log(err & "here is the error");
-    res.status(500).json(err);
-  }
+    res.render("dashboard")
+    // , {
+      // user,
+      // logged_in: req.session.logged_in
+  //   });
+  // } catch (err) {
+  //   console.log(err & "here is the error");
+  //   res.status(500).json(err);
+  // }
 });
 
 

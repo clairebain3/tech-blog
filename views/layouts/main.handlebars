@@ -3,25 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Potluck Party</title>
-  {{!-- <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css"> --}}
+  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <nav>
-        <a href="/homepage">Home</a>
-        <a href="/dashboard">Dashboard</a>
+    <nav class="navsection"  >
+        <a href="/" class = "navlink">Home</a>
+        <a href="/dashboard" class = "navlink">Dashboard</a>
         {{#if logged_in}}
-        <a href="/logout">Logout</a>
+        <a href="/logout" class = "navlink">Logout</a>
         {{else}}
-        <a href="/login">Login</a>
+        <a href="/login" class = "navlink">Login</a>
         {{/if}}
+        <div class = "techheader"><h1>The Tech Blog</h1></div>
     </nav>
 
     <header>
-      <h1>
-        The Tech Blog
-      </h1>
     </header>
       <main>
 {{!-- {{#each posts as |blog|}}
@@ -32,5 +30,5 @@
       </main>
 
   </body>
-
+   
 </html>

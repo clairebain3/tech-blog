@@ -1,0 +1,38 @@
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(210, 247, 210);
+}
+.navsection {
+    background-color: black;
+    color:  rgb(210, 247, 210);
+    padding: 20px;
+    margin: 0;
+}
+.navlink {
+    color:  rgb(210, 247, 210);
+    padding: 30px;
+}
+
+.techheader{
+    font-size: 30px;
+    background-color:  rgb(210, 247, 210);
+    color: black;
+    font-weight: bold;
+    margin: 20px;
+    padding: 0px;
+}
+
+.post{
+   padding: 5px;
+   border: black;
+   border-width: 3px;
+   border-style: solid;
+}
+.postlink{
+    background-color: black;
+    padding: 1px;
+    color: mintcream;
+    display: flexbox;
+    justify-content: space-between;
+    
+}
