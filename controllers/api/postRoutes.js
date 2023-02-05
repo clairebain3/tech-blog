@@ -5,7 +5,7 @@ router.post('/new', async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
-      user_id: req.session.user_id,
+      created_by: req.session.user_id,
     });
 
     res.status(200).json(newPost);

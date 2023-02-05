@@ -10,8 +10,12 @@ Comment.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
+User.hasMany(Post, {
+  foreignKey: 'created_by'
+});
+
 Post.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'created_by'
 });
 
 
