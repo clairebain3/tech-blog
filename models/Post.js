@@ -23,13 +23,16 @@ Post.init(
     //   type: DataTypes.DATE,
     //   allowNull: false,
     // },
-//     created_by: {
-//     type: DataTypes.STRING,
-//     allowNull: false,
-
-// },
-
+    created_by: {
+  type: DataTypes.INTEGER,
+  references: {
+    model: "user",
+    key: "id",
   },
+    },
+},
+
+
 
   {
     sequelize,
