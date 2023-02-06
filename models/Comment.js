@@ -19,19 +19,30 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-//     created_date: {
-//       type: DataTypes.DATE,
-//       allowNull: false,
-//     },
-//     created_by: {
-//     type: DataTypes.STRING,
-//     allowNull: false,
 
-// },
-//     post_id: {
-//     type: DataTypes.DATE,
-//     allowNull: false,
-//   },
+    post_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "post",
+        key: "id",
+      },
+    },
+    created_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    created_by: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: "user",
+      key: "id",
+    },
+
+},
+    
 
   },
 

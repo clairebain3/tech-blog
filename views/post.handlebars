@@ -5,15 +5,19 @@
   <div class = "postlink"><a href="/post/{{postdet.id}}" style = "color: mintcream">{{postdet.title}}</a> 
 
 
-<p>Posted by {{user.name}} on {{postdet.created_date}}</p> </div>
+<p>Posted by {{post.created_by}} on {{post.created_date}}</p> </div>
 
     <!-- The card contains the first painting of the gallery -->
+    <h3>{{post.title}}</h3>
     <p>
-        {{postdet.content}} 
+        {{post.content}} 
     </p>
 
-</section>
-  <p>
-    <button >Comment</button>
-  </p>
+
+<p class = "postBtn" onclick = document.location.replace('/createcomment');>Add a comment</p>
 </div>
+</section>
+
+{{#each postdet as |blog|}}
+<p>{{post.title}} says{{content}}</p>
+{{/each}}

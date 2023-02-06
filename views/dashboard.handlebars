@@ -1,18 +1,16 @@
 <h2> Welcome {{name}}</h2>
 {{#each posts as |blog|}}
 <section class = "post">
-  <!-- The contents of this card links to the gallery page using the gallery ID -->
   <div class = "postlink"><a href="/post/{{blog.id}}" style = "color: mintcream">{{blog.title}}</a> 
 
 <p>You posted on {{blog.created_date}}</p> </div>
 
 
-    <!-- The card contains the first painting of the gallery -->
     <p>
         {{blog.content}} 
     </p>
 
 </section>
 {{/each}}
-<p onclick = document.location.replace('/createpost');>+ New Post</p>
+<p class = "postBtn" onclick = document.location.replace('/createpost');>+ New Post</p>
 
