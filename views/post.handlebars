@@ -5,12 +5,13 @@
   <div class = "postlink"><a href="/post/{{postdet.id}}" style = "color: mintcream">{{postdet.title}}</a> 
 
 
-<p>Posted by {{post.created_by}} on {{post.created_date}}</p> </div>
+<p>Posted by {{postdet.user.name}} on {{postdet.created_date}}</p> </div>
 
     <!-- The card contains the first painting of the gallery -->
-    <h3>{{post.title}}</h3>
     <p>
-        {{post.content}} 
+        {{postdet.content}}
+        {{postdet.comments.content}}
+        {{comment.id}}
     </p>
 
 
@@ -18,6 +19,6 @@
 </div>
 </section>
 
-{{#each postdet as |blog|}}
-<p>{{post.title}} says{{content}}</p>
+{{#each comments as |blog|}}
+<p>{{id}} says{{postdet.comments.content}}</p>
 {{/each}}

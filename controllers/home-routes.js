@@ -45,14 +45,16 @@ router.get("/", async (req, res) => {
 // GET one post // i need to get all the comments as well
 router.get("/post/:id", async (req, res) => {
   try {
-    const dbCommentData = await Comment.findAll({
-where: {
-        post_id: req.params.id,
+    console.log(req.params)
+    const dbPostData = await Post.findByPk(req.params.id,{
+// where: {
+//         post_id: req.params.id,
 
 
       
-      },
-      include: [ {model: Post }],
+//       },
+      include: [User, {model: Comment, include: [User] }],
+      include: [User, Comment, {model: Comment, include: [User] }],
     // const dbPostData = await Post.findByPk(req.params.id, {
   
       // const dbPostData = await Post.findByPk(id, {
@@ -60,9 +62,10 @@ where: {
       // attributes: ["title", "content", "created_date", "created_by", "id"],
       // include: [{ model: Post }],
     });
-    const comment = dbCommentData.map((blog) => blog.get({ plain: true }));
-    // const postdet = dbPostData.get({ plain: true });
-    res.render("post", { comment,
+    // const comment = dbCommentData.map((blog) => blog.get({ plain: true }));
+    const postdet = dbPostData.get({ plain: true });
+    console.log(postdet)
+    res.render("post", { postdet,
       logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
