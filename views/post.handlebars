@@ -20,7 +20,11 @@
 </section>
 
 {{#each postdet.comments as |comment|}}
-<p> -- {{comment.user.name}}, {{comment.created_date}} says {{comment.content}}</p>
+<div class = comment>
+{{!-- <span class = "commentTop">t</span> --}}
+<p> -- {{comment.user.name}}, {{moment comment.created_date format="MM-DD-YYYY"}}</p>
+<p>{{comment.content}}</p>
+</div>
 {{/each}}
 
  <form class="form newcomment-form" style="display: none">

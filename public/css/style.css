@@ -30,6 +30,21 @@ body{
    border-width: 3px;
    border-style: solid;
 }
+
+.comment{
+    margin: 5px;
+    padding: 5px;
+    border:black;
+    border-width: 3px;
+    border-style: solid;
+}
+.commentTop{
+    width: 100%;
+    height: 10px;
+    background-color:black;
+
+}
+
 .postlink{
     background-color: black;
     padding: 1px;

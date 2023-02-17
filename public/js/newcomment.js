@@ -3,7 +3,7 @@ const commentFormHandler = async (event) => {
   
     const content = document.querySelector('#comment-content').value.trim();
     // const post_id = document.location.pathname.replace("/post/","")
-    post_id = 1
+    const post_id = 1
     console.log(post_id)
     console.log(content)
   
