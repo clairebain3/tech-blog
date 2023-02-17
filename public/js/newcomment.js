@@ -2,7 +2,10 @@ const commentFormHandler = async (event) => {
     event.preventDefault();
   
     const content = document.querySelector('#comment-content').value.trim();
-    const post_id = "2"
+    // const post_id = document.location.pathname.replace("/post/","")
+    post_id = 1
+    console.log(post_id)
+    console.log(content)
   
     if (content && post_id) {
       const response = await fetch('/api/comment/new', {
@@ -15,6 +18,7 @@ const commentFormHandler = async (event) => {
         document.location.replace('/dashboard'); // something else
       } else {
         alert(response.statusText);
+
       }
     }
   };
@@ -22,3 +26,8 @@ const commentFormHandler = async (event) => {
   document
     .querySelector('.newcomment-form')
     .addEventListener('submit', commentFormHandler);
+
+    function newcomment() {
+      const commentForm = document.querySelector('.newcomment-form')
+     commentForm.style.display = "inline"
+    }

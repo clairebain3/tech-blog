@@ -15,10 +15,25 @@
     </p>
 
 
-<p class = "postBtn" onclick = document.location.replace('/createcomment');>Add a comment</p>
+<p class = "postBtn" onclick = newcomment();>Add a comment</p>
 </div>
 </section>
 
-{{#each comments as |blog|}}
-<p>{{id}} says{{postdet.comments.content}}</p>
+{{#each postdet.comments as |comment|}}
+<p> -- {{comment.user.name}}, {{comment.created_date}} says {{comment.content}}</p>
 {{/each}}
+
+ <form class="form newcomment-form" style="display: none">
+
+      <div class="form-group">
+        <label for="newcomment-content">Type your comment here.</label>
+        <input class="form-input" type="text" id="comment-content" />
+      </div>
+      <div class="form-group">
+        <button class="postBtn" type="submit">Comment</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/newcomment.js"></script>
