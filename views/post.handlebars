@@ -3,11 +3,11 @@
 <section class = "post">
   <!-- The contents of this card links to the gallery page using the gallery ID -->
   <div class = "postlink"><a href="/post/{{postdet.id}}" style = "color: mintcream">{{postdet.title}}</a> 
-
+<p class = "editPost" onclick = editcomment();>Edit</p>
 
 <p>Posted by {{postdet.user.name}} on {{postdet.created_date}}</p> </div>
 
-    <!-- The card contains the first painting of the gallery -->
+
     <p>
         {{postdet.content}}
         {{postdet.comments.content}}

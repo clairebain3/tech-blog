@@ -66,3 +66,7 @@ body{
 .postBtn:hover{
     cursor: pointer;
 }
+.editPost{
+    color: blue;
+    
+}

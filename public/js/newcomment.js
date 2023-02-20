@@ -2,8 +2,7 @@ const commentFormHandler = async (event) => {
     event.preventDefault();
   
     const content = document.querySelector('#comment-content').value.trim();
-    // const post_id = document.location.pathname.replace("/post/","")
-    const post_id = 1
+    const post_id = parseInt(document.location.pathname.replace("/post/",""))
     console.log(post_id)
     console.log(content)
   
@@ -15,7 +14,7 @@ const commentFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard'); // something else
+        document.location.replace(''); // something else
       } else {
         alert(response.statusText);
 
@@ -30,4 +29,8 @@ const commentFormHandler = async (event) => {
     function newcomment() {
       const commentForm = document.querySelector('.newcomment-form')
      commentForm.style.display = "inline"
+    }
+
+    function editcomment(){
+      
     }
