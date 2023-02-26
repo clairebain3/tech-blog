@@ -3,9 +3,7 @@ const commentFormHandler = async (event) => {
   
     const content = document.querySelector('#comment-content').value.trim();
     const post_id = parseInt(document.location.pathname.split("/").pop());
-    // if (!post_id){
-    // const post_id = parseInt(document.location.pathname.replace("/mypost/",""))
-    // }
+
     console.log(post_id)
     console.log(content)
   
@@ -17,7 +15,7 @@ const commentFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace(''); // something else
+        document.location.replace(''); 
       } else {
         alert(response.statusText);
 

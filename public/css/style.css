@@ -49,8 +49,8 @@ body{
     background-color: black;
     padding: 1px;
     color: mintcream;
-    display: flexbox;
-    justify-content: space-between;
+    /* display: flexbox; */
+    /* justify-content: space-between; */
     
 }
 
@@ -69,4 +69,10 @@ body{
 .editPost{
     color: blue;
     
+}
+.postHeader{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+
 }

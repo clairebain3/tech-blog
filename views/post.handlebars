@@ -6,7 +6,7 @@
 
 {{!-- <p class = "editPost" onclick = document.location.replace(('/editpost:'{{postdet.id}}))>Edit</p> --}}
 
-<p>Posted by {{postdet.user.name}} on {{postdet.created_date}}</p> </div>
+<p>Posted by {{postdet.user.name}} on {{moment postdet.created_date format="MM-DD-YYYY"}}</p> </div>
 
 
     <p>

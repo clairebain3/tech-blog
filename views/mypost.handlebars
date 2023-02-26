@@ -1,10 +1,12 @@
 <section class = "post">
   <!-- The contents of this card links to the gallery page using the gallery ID -->
-  <div class = "postlink"><a href="/post/{{postdet.id}}" style = "color: mintcream">{{postdet.title}}</a> 
-    <div class = "postlink"><a href="/editpost/{{postdet.id}}" style = "color: mintcream">edit post</a> 
-<p id = "deletePost" >Delete</p>
 
-<p>Posted by {{postdet.user.name}} on {{postdet.created_date}}</p> </div>
+  <div class = "postlink"><a href="/post/{{postdet.id}}" style = "color: mintcream">{{postdet.title}}</a> </div>
+    <div class = "postHeader">
+    <div class = "postBtn"><a href="/editpost/{{postdet.id}}" style = "color: mintcream">edit post</a> </div>
+<p class = "postBtn" id = "deletePost" >Delete</p>
+</div>
+<p>Posted by {{postdet.user.name}} on {{moment postdet.created_date format="MM-DD-YYYY"}}</p> </div>
 
 
     <p>
