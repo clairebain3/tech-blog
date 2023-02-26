@@ -10,8 +10,8 @@ if (process.env.JAWSDB_URL) {
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
-      dialect:  'postgres',
-      protocol: 'postgres',
+      dialect:  'mysql',
+      protocol: 'mysql',
       logging:  true //false
     });
 } else {
