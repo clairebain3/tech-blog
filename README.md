@@ -12,3 +12,4 @@ Usage: Please visit this link: https://blooming-scrubland-20223.herokuapp.com/
 Credits N/A
 
 License Please refer to the license in the repo
+![Picture of webpage](/assets/techblogpic.png)
