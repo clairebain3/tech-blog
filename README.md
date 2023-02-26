@@ -7,7 +7,7 @@ Description: This application uses front end and back end technology to produce 
 
 Installation: N/A
 
-Usage: Please visit this link: https://clairebain3.github.io/weather-dashboard/
+Usage: Please visit this link: https://blooming-scrubland-20223.herokuapp.com/
 
 Credits N/A
 
