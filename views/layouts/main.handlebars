@@ -10,8 +10,8 @@
 <body>
     <nav class="navsection"  >
         <a href="/" class = "navlink">Home</a>
-        <a href="/dashboard" class = "navlink">Dashboard</a>
         {{#if logged_in}}
+        <a href="/dashboard" class = "navlink">Dashboard</a>
         <a href="/logout" class = "navlink">Logout</a>
         {{else}}
         <a href="/login" class = "navlink">Login</a>

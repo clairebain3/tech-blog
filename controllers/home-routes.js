@@ -21,29 +21,12 @@ router.get("/", async (req, res) => {
   }
 });
 
-// // GET one post // this one works
-// router.get("/post/:id", async (req, res) => {
-//   try {
-//     const dbPostData = await Post.findByPk(req.params.id, {
-//     // const dbPostData = await Post.findByPk(req.params.id, {
-//       // const dbPostData = await Post.findByPk(id, {
-
-//       attributes: ["title", "content", "created_date", "created_by", "id"],
-//       include: [{ model: Comment }],
-//     });
-
-//     const postdet = dbPostData.get({ plain: true });
-//     res.render("post", { postdet,
-//       logged_in: req.session.logged_in});
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 
 
 // GET one post // i need to get all the comments as well
 router.get("/post/:id", async (req, res) => {
+  console.log(Post.created_by)
+   
   try {
     console.log(req.params)
     const dbPostData = await Post.findByPk(req.params.id,{
@@ -66,7 +49,30 @@ router.get("/post/:id", async (req, res) => {
     const postdet = dbPostData.get({ plain: true });
     console.log(postdet)
     res.render("post", { postdet,
-      logged_in: req.session.logged_in });
+      logged_in: req.session.logged_in,
+     user_id: req.session.user_id});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+router.get("/mypost/:id", async (req, res) => {
+  console.log(Post.created_by)
+   
+  try {
+    console.log(req.params)
+    const dbPostData = await Post.findByPk(req.params.id,{
+
+      include: [User, {model: Comment, include: [User] }],
+      include: [User, Comment, {model: Comment, include: [User] }],
+
+    });
+
+    const postdet = dbPostData.get({ plain: true });
+    console.log(postdet)
+    res.render("mypost", { postdet,
+      logged_in: req.session.logged_in,
+     user_id: req.session.user_id});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -113,7 +119,11 @@ router.get('/createpost', async (req, res) => {
   res.render('newpost')
 })
 
-router.get('/createcomment', async (req, res) => {
-  res.render('newcomment')
-})
+// router.get('/createcomment', async (req, res) => {
+//   res.render('newcomment')
+// })
 module.exports = router;
+
+router.get('/editpost/:id', async (req, res) => {
+  res.render('editpost')
+})

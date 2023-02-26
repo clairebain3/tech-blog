@@ -31,6 +31,4 @@ const commentFormHandler = async (event) => {
      commentForm.style.display = "inline"
     }
 
-    function editcomment(){
-      
-    }
+  
