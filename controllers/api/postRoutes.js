@@ -38,19 +38,23 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async ({ body, params }, res) => {
+router.delete("/:id", async (req, res) => {
   try {
-    const [updatedData] =  await  Post.destroy({
-      where: {
-        id: params.id
-      }
-    })
+    // const [updatedData] =  await  Post.destroy({
+          await  Post.destroy({
 
-    if(updatedData > 0){
+      where: {
+        id: req.params.id
+      }
+                  // console.log([updatedData])
+    })
+    // console.log([updatedData])
+    console.log("testing")
+  //   if(updatedData > 0){
       res.status(200).end();
-    }else{
-      res.status(404).end();
-    }
+  //   }else{
+  //     res.status(404).end();
+  //   }
     
   } catch (err) {
     res.status(400).json(err);

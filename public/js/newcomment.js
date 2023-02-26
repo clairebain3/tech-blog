@@ -2,7 +2,10 @@ const commentFormHandler = async (event) => {
     event.preventDefault();
   
     const content = document.querySelector('#comment-content').value.trim();
-    const post_id = parseInt(document.location.pathname.replace("/post/",""))
+    const post_id = parseInt(document.location.pathname.split("/").pop());
+    // if (!post_id){
+    // const post_id = parseInt(document.location.pathname.replace("/mypost/",""))
+    // }
     console.log(post_id)
     console.log(content)
   
@@ -21,6 +24,29 @@ const commentFormHandler = async (event) => {
       }
     }
   };
+
+  const deletepost = async (event) => {
+    event.preventDefault();
+    const id = parseInt(document.location.pathname.replace("/mypost/",""))
+
+  const url = `/api/post/ ${id}`
+  console.log(url)
+    // if (content && post_id) {
+      const response = await fetch(url, {
+        method: 'DELETE',
+        // body: JSON.stringify({id}),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/dashboard'); // something else
+      } else {
+        alert(response.statusText);
+
+      // }
+    }
+  };
+
   
   document
     .querySelector('.newcomment-form')
@@ -31,4 +57,5 @@ const commentFormHandler = async (event) => {
      commentForm.style.display = "inline"
     }
 
-  
+ const del = document.getElementById('deletePost')
+    del.addEventListener('click', deletepost)
