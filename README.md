@@ -1,6 +1,5 @@
 # tech-blog
 
-# pwa-text-editor
 
 Description: This application uses front end and back end technology to produce a tech blog where users can create, edit and delete blog posts, as well as comment on posts. The blog also has login and signup capabilities. 
 
